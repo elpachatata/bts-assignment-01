@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>BTS Website</title>
+		<script>
+			function getRandomNumber(minNumber, maxNumber) {
+				let something = 0
+				return Math.floor( Math.random() * (maxNumber - minNumber + 1) + minNumber)
+			}
+
+			function getAlertMessages(whoIs, selection) {
+				if ( selection == 1 ) {
+					alert( whoIs + " chose rock 🪨" );
+				} else if ( selection == 2 ) {
+					alert( whoIs + " chose paper 📃" );
+				} else if ( selection == 3 ) {
+					alert( whoIs + " chose scissors ✂️" );
+				} else {
+					alert( "Is has an error with the selection of " + whoIs + " 🙃" );
+				}
+			}
+
+			function whoWinBetween(playerSelection, computerSelection) {
+				if ( playerSelection == computerSelection ) {
+					alert( "It's a tie 🤼" );
+				} else if ( playerSelection == 1 && computerSelection == 3 ) {
+					alert( "You win! 🥳" );
+				} else if ( playerSelection == 2 && computerSelection == 1 ) {
+					alert( "You win! 🥳" );
+				} else if ( playerSelection == 3 && computerSelection == 2 ) {
+					alert( "You win! 🥳" );
+				} else {
+					alert( "Yo lose 😢" );
+				}
+			}
+
+			// constants variables
+			const MIN = 1
+			const MAX = 3
+
+			const ROCK = 1
+			const PAPER = 2
+			const SCISSORS = 3
+
+			// player selection
+			let player = prompt("Chose: 1 for 🪨, 2 for 📃, 3 for ✂️")
+			getAlertMessages("Player", player)
+
+			// computer selection
+			let computer = getRandomNumber(MIN, MAX)
+			getAlertMessages("Computer", computer)
+
+			// let's fight
+			whoWinBetween(player, computer)
+		</script>
+	</head>
+	<body>
+		<h1>We go back in 15min</h1>
+		<p>If you have doubts, please add to the chat</p>
+	</body>
+</html>
